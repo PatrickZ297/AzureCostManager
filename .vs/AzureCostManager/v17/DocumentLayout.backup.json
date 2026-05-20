@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\ZdeborPatrick\\OneDrive - LG-Academy\\Desktop\\\u00DCbungen\\AzureCostManager\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E8E41AC2-8380-4558-90B3-315D55297CA7}|AzureCostManager.csproj|c:\\users\\zdeborpatrick\\onedrive - lg-academy\\desktop\\\u00FCbungen\\azurecostmanager\\azurecostmanager.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{E8E41AC2-8380-4558-90B3-315D55297CA7}|AzureCostManager.csproj|solutionrelative:azurecostmanager.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E8E41AC2-8380-4558-90B3-315D55297CA7}|AzureCostManager.csproj|c:\\users\\zdeborpatrick\\onedrive - lg-academy\\desktop\\\u00FCbungen\\azurecostmanager\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E8E41AC2-8380-4558-90B3-315D55297CA7}|AzureCostManager.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8E41AC2-8380-4558-90B3-315D55297CA7}|AzureCostManager.csproj|c:\\users\\zdeborpatrick\\onedrive - lg-academy\\desktop\\\u00FCbungen\\azurecostmanager\\azurecostmanager.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{E8E41AC2-8380-4558-90B3-315D55297CA7}|AzureCostManager.csproj|solutionrelative:azurecostmanager.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,11 +18,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "AzureCostManager",
               "DocumentMoniker": "C:\\Users\\ZdeborPatrick\\OneDrive - LG-Academy\\Desktop\\\u00DCbungen\\AzureCostManager\\AzureCostManager.csproj",
               "RelativeDocumentMoniker": "AzureCostManager.csproj",
@@ -39,7 +39,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\ZdeborPatrick\\OneDrive - LG-Academy\\Desktop\\\u00DCbungen\\AzureCostManager\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
