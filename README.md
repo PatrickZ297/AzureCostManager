@@ -36,3 +36,23 @@ AzureCostManager/
 1. Clone the repository
 2. Open AzureCostManager.sln in Visual Studio
 3. Press F5 to run
+
+## Technologies
+- C# / .NET
+- Visual Studio Community 2022
+- Github
+
+## Development Log
+
+### Day 1
+- Repository set up
+- Project structure created
+- README created
+
+### Day 2
+- Class diagram created in shields.io 
+- Project classes created (User, Admin, Customer)
+
+### Day 3
+- User.cs, Admin.cs, Customer.cs implemented
+- Resource.cs and Calculations.cs created
