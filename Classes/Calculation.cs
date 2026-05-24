@@ -51,5 +51,35 @@ namespace AzureCostManager.Classes
             Console.WriteLine($"Total:    {TotalCost:F2} EUR");
             Console.WriteLine("=================================");
         }
+
+        public void EditResource()
+        {
+            Console.Clear();
+            Console.WriteLine("=================================");
+            Console.WriteLine("         Edit Resource           ");
+            Console.WriteLine("=================================");
+
+            for (int i = 0; i < resources.Count; i++)
+                Console.WriteLine($"{i + 1}. {resources[i].Name}: {quantities[i]} {resources[i].Unit}");
+
+            Console.WriteLine("Select resource to edit:");
+            bool gültig = int.TryParse(Console.ReadLine(), out int auswahl);
+
+            if (!gültig || auswahl < 1 || auswahl > resources.Count)
+            {
+                Console.WriteLine("Invalid input!");
+                return;
+            }
+
+            Console.WriteLine($"New quantity for {resources[auswahl - 1].Name}:");
+            bool gültigMenge = double.TryParse(Console.ReadLine(), out double neueMenge);
+
+            if (gültigMenge && neueMenge > 0)
+            {
+                quantities[auswahl - 1] = neueMenge;
+                Console.WriteLine("Updated successfully!");
+                ShowSummary();
+            }
+        }
     }
 }

@@ -27,6 +27,11 @@ namespace AzureCostManager.Classes
             return this.pin == eingabePin;
         }
 
+        public string GetPin()
+        {
+            return pin;
+        }
+
         public virtual void ShowProfile()
         {
             Console.WriteLine($"Username: {username}");

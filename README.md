@@ -67,3 +67,6 @@ AzureCostManager/
 ### Day 4
 - Resource.cs and Calculation.cs implemented
 - Program.cs implemented
+- Extended calculation features added (Full, Custom, Edit)
+- FileService.cs implemented
+- CSV persistence in progress - debugging ongoing

@@ -1,4 +1,5 @@
 ﻿using AzureCostManager.Classes;
+using AzureCostManager.Services;
 
 namespace AzureCostManager
 {
@@ -9,17 +10,19 @@ namespace AzureCostManager
 
         static void Main(string[] args)
         {
-            // Standardressourcen
             resources.Add(new Resource("Virtual Machine", "hours", 0.10));
             resources.Add(new Resource("Storage", "GB", 0.02));
             resources.Add(new Resource("Database", "hours", 0.15));
             resources.Add(new Resource("Bandwidth", "GB", 0.07));
             resources.Add(new Resource("Backup", "GB", 0.03));
 
-            // Standardbenutzer
-            users.Add(new Admin("Patrick", "1234"));
-            users.Add(new Customer("Peter", "5678"));
-            users.Add(new Customer("Pan", "9999"));
+            users = FileService.LoadUsers();
+            if (users.Count == 0)
+            {
+                users.Add(new Admin("Patrick", "1234"));
+                users.Add(new Customer("Peter", "5678"));
+                users.Add(new Customer("Pan", "9999"));
+            }
 
             while (true)
             {
@@ -102,6 +105,7 @@ namespace AzureCostManager
                         Console.WriteLine("Role (Admin/Customer):");
                         string newRole = Console.ReadLine();
                         admin.CreateUser(users, newUsername, newPin, newRole);
+                        FileService.SaveUsers(users);
                         Console.ReadKey();
                     }
 
@@ -110,6 +114,7 @@ namespace AzureCostManager
                         Console.WriteLine("Username to delete:");
                         string delUsername = Console.ReadLine();
                         admin.DeleteUser(users, delUsername);
+                        FileService.SaveUsers(users);
                         Console.ReadKey();
                     }
                 }
@@ -131,7 +136,10 @@ namespace AzureCostManager
                 }
 
                 if (auswahl == 4)
+                {
+                    FileService.SaveUsers(users);
                     break;
+                }
             }
         }
 
@@ -160,7 +168,25 @@ namespace AzureCostManager
                 }
 
                 if (auswahl == 1)
-                    customer.NewCalculation(resources);
+                {
+                    Console.Clear();
+                    Console.WriteLine("=================================");
+                    Console.WriteLine("        New Calculation          ");
+                    Console.WriteLine("=================================");
+                    Console.WriteLine("1. Full Calculation");
+                    Console.WriteLine("2. Custom Calculation");
+                    Console.WriteLine("3. Edit Existing Calculation");
+                    Console.WriteLine("Your choice:");
+
+                    bool gültigSub = int.TryParse(Console.ReadLine(), out int sub);
+
+                    if (sub == 1)
+                        customer.FullCalculation(resources);
+                    if (sub == 2)
+                        customer.IndividualCalculation(resources);
+                    if (sub == 3)
+                        customer.EditCalculation();
+                }
 
                 if (auswahl == 2)
                 {
@@ -177,7 +203,10 @@ namespace AzureCostManager
                 }
 
                 if (auswahl == 4)
+                {
+                    FileService.SaveUsers(users);
                     break;
+                }
             }
         }
     }
