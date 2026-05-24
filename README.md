@@ -62,4 +62,8 @@ AzureCostManager/
 ### Day 3 
 - User.cs, Admin.cs, Customer.cs implemented
 - Resource.cs and Calculation.cs created
--Troubleshooting delete .vs from github and commit in VS Community vs. powershell
+- Troubleshooting delete .vs from github and commit in VS Community vs. powershell
+
+### Day 4
+- Resource.cs and Calculation.cs implemented
+- Program.cs implemented
