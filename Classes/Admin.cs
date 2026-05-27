@@ -15,6 +15,14 @@ namespace AzureCostManager.Classes
 
         public void CreateUser(List<User> users, string username, string pin, string role)
         {
+            bool existiert = users.Find(u => u.Username.ToLower() == username.ToLower()) != null;
+
+            if (existiert)
+            {
+                Console.WriteLine($"Username '{username}' already exists!");
+                return;
+            }
+
             if (role == "Admin")
                 users.Add(new Admin(username, pin));
             else

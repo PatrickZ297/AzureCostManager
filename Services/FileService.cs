@@ -11,7 +11,10 @@ namespace AzureCostManager.Services
     class FileService
     {
         private static string usersPath = Path.Combine(
-            AppDomain.CurrentDomain.BaseDirectory, "Data", "users.csv");
+            Directory.GetCurrentDirectory(), "Data", "users.csv");
+
+        private static string calculationsPath = Path.Combine(
+            Directory.GetCurrentDirectory(), "Data", "calculations.csv");
 
         public static void SaveUsers(List<User> users)
         {
@@ -44,6 +47,24 @@ namespace AzureCostManager.Services
             }
 
             return users;
+        }
+
+        public static void SaveCalculations(List<User> users)
+        {
+            List<string> lines = new List<string>();
+            lines.Add("Username,Date,Time,Resource,Quantity,Unit,Cost");
+
+            foreach (User u in users)
+            {
+                if (u is Customer customer)
+                {
+                    foreach (string line in customer.GetCalculationLines())
+                        lines.Add(line);
+                }
+            }
+
+            Directory.CreateDirectory(Path.GetDirectoryName(calculationsPath));
+            File.WriteAllLines(calculationsPath, lines);
         }
     }
 }

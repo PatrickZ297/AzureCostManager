@@ -18,16 +18,19 @@ and monitor their monthly Azure cloud costs.
 ```
 AzureCostManager/
 ├── Classes/
-│   ├── User.cs
 │   ├── Admin.cs
-│   └── Customer.cs
+│   ├── Calculation.cs
+│   ├── Customer.cs
+│   ├── Resource.cs
+│   └── User.cs
+├── Data/
+│   ├── calculations.csv
+│   └── users.csv
+├── docs/
+│   └── class-diagram.png
 ├── Services/
-│   ├── CostCalculator.cs
-│   ├── FileService.cs
-│   └── UserManagementService.cs
-└── Data/
-    ├── users.csv
-    └── calculations.csv
+│   └── FileService.cs
+└── Program.cs
 ```
 
 ## Class Diagram
@@ -70,3 +73,11 @@ AzureCostManager/
 - Extended calculation features added (Full, Custom, Edit)
 - FileService.cs implemented
 - CSV persistence in progress - debugging ongoing
+
+### Day 5 
+- FileService.cs implemented
+- CSV persistence for users and calculations added
+- Duplicate username validation added
+- bug fixes and code cleanup
+
+### Day 6

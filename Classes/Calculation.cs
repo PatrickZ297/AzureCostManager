@@ -52,6 +52,13 @@ namespace AzureCostManager.Classes
             Console.WriteLine("=================================");
         }
 
+        public List<string> GetCSVLines(string username)
+        {
+            List<string> lines = new List<string>();
+            for (int i = 0; i < resources.Count; i++)
+                lines.Add($"{username},{date:dd.MM.yyyy},{date:HH:mm},{resources[i].Name},{quantities[i]},{resources[i].Unit},{resources[i].CalculateCost(quantities[i]):F2}");
+            return lines;
+        }
         public void EditResource()
         {
             Console.Clear();

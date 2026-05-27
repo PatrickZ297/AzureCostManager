@@ -28,9 +28,9 @@ namespace AzureCostManager
             {
                 Console.Clear();
                 Console.WriteLine("=================================");
-                Console.WriteLine("      AzureCostManager v1.0      ");
+                Console.WriteLine("      AzureCostManager           ");
                 Console.WriteLine("=================================");
-                Console.WriteLine("Username:");
+                Console.WriteLine("Your Username:");
                 string username = Console.ReadLine().Trim();
 
                 User user = users.Find(u => u.Username.ToLower() == username.ToLower());
@@ -42,7 +42,7 @@ namespace AzureCostManager
                     continue;
                 }
 
-                Console.WriteLine("PIN:");
+                Console.WriteLine("Your PIN:");
                 string pin = Console.ReadLine().Trim();
 
                 if (!user.Login(pin))
@@ -106,6 +106,7 @@ namespace AzureCostManager
                         string newRole = Console.ReadLine();
                         admin.CreateUser(users, newUsername, newPin, newRole);
                         FileService.SaveUsers(users);
+                        FileService.SaveCalculations(users);
                         Console.ReadKey();
                     }
 
@@ -115,6 +116,7 @@ namespace AzureCostManager
                         string delUsername = Console.ReadLine();
                         admin.DeleteUser(users, delUsername);
                         FileService.SaveUsers(users);
+                        FileService.SaveCalculations(users);
                         Console.ReadKey();
                     }
                 }
@@ -138,6 +140,7 @@ namespace AzureCostManager
                 if (auswahl == 4)
                 {
                     FileService.SaveUsers(users);
+                    FileService.SaveCalculations(users);
                     break;
                 }
             }
@@ -205,6 +208,7 @@ namespace AzureCostManager
                 if (auswahl == 4)
                 {
                     FileService.SaveUsers(users);
+                    FileService.SaveCalculations(users);
                     break;
                 }
             }

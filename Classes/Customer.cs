@@ -136,6 +136,15 @@ namespace AzureCostManager.Classes
                 c.ShowSummary();
         }
 
+        public List<string> GetCalculationLines()
+        {
+            List<string> lines = new List<string>();
+            foreach (Calculation c in calculations)
+                foreach (string line in c.GetCSVLines(Username))
+                    lines.Add(line);
+            return lines;
+        }
+
         public override void ShowProfile()
         {
             Console.WriteLine("=================================");
