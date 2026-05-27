@@ -1,7 +1,7 @@
 # AzureCostManager
 ![Language](https://img.shields.io/badge/Language-C%23-blue)
 ![Platform](https://img.shields.io/badge/Platform-Azure-blue)
-![Status](https://img.shields.io/badge/Status-In%20Development-yellow)
+![Status](https://img.shields.io/badge/Status-Finished-yellow)
 
 ## Description
 A C# console application that helps companies manage 
@@ -36,6 +36,22 @@ AzureCostManager/
 ## Class Diagram
 ![Class Diagram](docs/class-diagram.png)
 
+## Screenshots
+### Login
+![Login](docs/screenshot-login.png)
+
+### Admin Menu
+![Admin Menu](docs/screenshot-admin-menu.png)
+![User Management](docs/screenshot-admin-menu-user-management.png)
+
+### Customer Menu
+![Customer Menu](docs/screenshot-customer-menu.png)
+![Calculation](docs/screenshot-customer-menu-calculation.png)
+
+### Calculation
+![Calculation](docs/screenshot-calculation-example.png)
+![Calculation](docs/screenshot-calculation-example-summary.png)
+
 ## How to Run
 1. Clone the repository
 2. Open AzureCostManager.sln in Visual Studio
@@ -49,7 +65,9 @@ AzureCostManager/
 ## AI Tools Used
 | Tool | Purpose |
 |------|---------|
+| Claude (Anthropic) | Designelements for Project Structure (└──, ├──, │  )
 | Claude (Anthropic) | Trouble shooting with github and vs community 
+| Claude (Anthropic) | Trouble shooting for CSV persistence
 
 ## Development Log
 
@@ -81,3 +99,7 @@ AzureCostManager/
 - bug fixes and code cleanup
 
 ### Day 6
+- Class Diagram completed
+- Screenshots added
+- README finalized 
+- Presentation prepared

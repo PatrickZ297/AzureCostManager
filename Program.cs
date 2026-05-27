@@ -105,9 +105,10 @@ namespace AzureCostManager
                         Console.WriteLine("Role (Admin/Customer):");
                         string newRole = Console.ReadLine();
                         admin.CreateUser(users, newUsername, newPin, newRole);
+
+                        Console.ReadKey();
                         FileService.SaveUsers(users);
                         FileService.SaveCalculations(users);
-                        Console.ReadKey();
                     }
 
                     if (auswahl2 == 2)
